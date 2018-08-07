@@ -1,5 +1,8 @@
 package com.mis.persistence;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -31,13 +34,41 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public MemberVO readMember(String userid) throws Exception {
 
-		return null;
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+		
+		paramMap.put("userid", userid);
+		
+		return sqlSession.selectOne(namespace + ".readMember", paramMap);
 	}
 
 	@Override
-	public MemberVO redWithPW(String userid, String userpw) throws Exception {
+	public MemberVO readWithPW(String userid, String pw) throws Exception {
 
-		return null;
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+		
+		paramMap.put("userid", userid);
+		paramMap.put("userpw", pw);
+		
+		return sqlSession.selectOne(namespace + ".readWithPW", paramMap);
+	}
+
+	@Override
+	public void updateMember(MemberVO vo) throws Exception {
+		
+		sqlSession.update(namespace + ".updateMember", vo);
+		
+	}
+	
+	@Override
+	public void deleteMember(String userid, String pw) throws Exception {
+		
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+		
+		paramMap.put("userid", userid);
+		paramMap.put("userpw", pw);
+		
+		sqlSession.delete(namespace + ".deleteMember", paramMap);
+		
 	}
 
 	

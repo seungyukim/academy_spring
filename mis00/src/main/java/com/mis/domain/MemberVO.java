@@ -4,29 +4,29 @@ import java.util.Date;
 
 public class MemberVO {
 
-	private String userId;
-	private String userPw;
-	private String userName;
+	private String userid;
+	private String userpw;
+	private String username;
 	private String email;
-	private Date regDate;
-	private Date updateDate;
-	public String getUserId() {
-		return userId;
+	private Date regdate;
+	private Date updatedate;
+	public String getUserid() {
+		return userid;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
-	public String getUserPw() {
-		return userPw;
+	public String getUserpw() {
+		return userpw;
 	}
-	public void setUserPw(String userPw) {
-		this.userPw = userPw;
+	public void setUserpw(String userpw) {
+		this.userpw = userpw;
 	}
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getEmail() {
 		return email;
@@ -34,23 +34,22 @@ public class MemberVO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getRegDate() {
-		return regDate;
+	public Date getRegdate() {
+		return regdate;
 	}
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
 	}
-	public Date getUpdateDate() {
-		return updateDate;
+	public Date getUpdatedate() {
+		return updatedate;
 	}
-	public void setUpdateDate(Date updateDate) {
-		this.updateDate = updateDate;
+	public void setUpdatedate(Date updatedate) {
+		this.updatedate = updatedate;
 	}
 	@Override
 	public String toString() {
-		return "MemberVO [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", email=" + email
-				+ ", regDate=" + regDate + ", updateDate=" + updateDate + "]";
+		return "MemberVO [userid=" + userid + ", userpw=" + userpw + ", username=" + username + ", email=" + email
+				+ ", regdate=" + regdate + ", updatedate=" + updatedate + "]";
 	}
-
 	
 }

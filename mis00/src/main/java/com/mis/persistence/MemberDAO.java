@@ -10,6 +10,10 @@ public interface MemberDAO {
 	
 	public MemberVO readMember(String userid) throws Exception;
 	
-	public MemberVO redWithPW(String userid, String userpw) throws Exception;
+	public MemberVO readWithPW(String userid, String userpw) throws Exception;
+
+	public void updateMember(MemberVO vo) throws Exception;
+	
+	public void deleteMember(String userid, String userpw) throws Exception;
 	
 }
