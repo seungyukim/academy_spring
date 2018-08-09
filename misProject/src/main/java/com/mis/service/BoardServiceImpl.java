@@ -23,7 +23,8 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public BoardVO read(int bno) throws Exception {
-
+		// 컨트롤러 건드리지 않고 서비스단에서 조회수 증가를 시킬수 있음
+		dao.updateViewCnt(bno);
 		return dao.read(bno);
 	}
 
@@ -45,11 +46,10 @@ public class BoardServiceImpl implements BoardService {
 		return dao.listAll();
 	}
 
-	@Override
-	public void updateViewCnt(Integer bno) throws Exception {
-		dao.updateViewCnt(bno);
-			
-	}
-		
+//	@Override
+//	public void updateViewCnt(Integer bno) throws Exception {
+//		dao.updateViewCnt(bno);		
+//	}
+
 
 }

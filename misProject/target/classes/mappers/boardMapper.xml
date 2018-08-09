@@ -42,15 +42,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 			      ,viewcnt
 			  FROM tbl_board
 			 WHERE bno > 0
-			 ORDER BY bno desc, regdate desc     
+			 ORDER BY bno DESC, regdate DESC
 		]]>
 	</select>
 	
 	<update id="updateViewCnt">
 		UPDATE tbl_board
-		   SET viewcnt = (SELECT viewcnt + 1
-		   			       FROM tbl_board
-		   			      WHERE bno = #{bno})
+		   SET viewcnt = viewcnt + 1
+<!-- 		   	            (SELECT viewcnt + 1 -->
+<!-- 		   			       FROM tbl_board -->
+<!-- 		   			      WHERE bno = #{bno}) -->
 		 WHERE bno = #{bno}     
 	</update>
 	
