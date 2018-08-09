@@ -55,4 +55,64 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		 WHERE bno = #{bno}     
 	</update>
 	
+	<select id="listPage" resultType="com.mis.domain.BoardVO">
+		<![CDATA[
+			SELECT *
+			  FROM (SELECT bno, title, content, writer, regdate, viewcnt
+			          FROM tbl_board 
+			         WHERE bno > 0 )
+			 WHERE rownum <= #{page}
+			 ORDER BY bno DESC, regdate DESC
+		]]>	
+	</select>
+
+	<select id="listCriteria" resultType="com.mis.domain.BoardVO">
+		<![CDATA[
+			SELECT *
+			  FROM (SELECT rownum rnum, bno, title, content, writer, regdate, viewcnt
+			          FROM tbl_board 
+			         WHERE bno > 0 )
+			 WHERE (rnum >= #{pageStart} AND rnum <= #{pageEnd}) 
+			 ORDER BY bno DESC, regdate DESC
+		]]>	
+	</select>
+	
+	<select id="countPaging" resultType="int">
+		<![CDATA[
+			SELECT count(bno)
+			  FROM tbl_board
+			 WHERE bno > 0 		
+		]]>
+	</select>
+	
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

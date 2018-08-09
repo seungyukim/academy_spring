@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mis.domain.BoardVO;
+import com.mis.domain.Criteria;
+import com.mis.domain.PageMaker;
 import com.mis.service.BoardService;
 
 @Controller
@@ -82,4 +84,28 @@ public class BoardController {
 		
 	}
 	
+	@RequestMapping(value = "/listCri", method = RequestMethod.GET)
+	public void listCri(Criteria cri, Model model) throws Exception {
+		
+		logger.info("show list page with Criteria.............");
+		
+		model.addAttribute("list", service.listCriteria(cri));
+	}
+
+	@RequestMapping(value = "/listPage", method = RequestMethod.GET)
+	public void listPage(Criteria cri, Model model) throws Exception {
+		
+		logger.info(cri.toString());
+		
+		model.addAttribute("list", service.listCriteria(cri));
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(410);
+		
+		model.addAttribute("pageMaker", pageMaker);
+	}
+	
+	
+
 }
+

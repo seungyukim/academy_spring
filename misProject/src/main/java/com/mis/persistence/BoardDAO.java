@@ -3,6 +3,7 @@ package com.mis.persistence;
 import java.util.List;
 
 import com.mis.domain.BoardVO;
+import com.mis.domain.Criteria;
 
 public interface BoardDAO {
 
@@ -43,4 +44,29 @@ public interface BoardDAO {
 	 * @throws Exception
 	 */
 	public void updateViewCnt(Integer bno) throws Exception;
+	
+	public List<BoardVO> listPage(int page) throws Exception;
+	
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
+	
+	public int countPaging(Criteria cri) throws Exception;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
