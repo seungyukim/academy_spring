@@ -23,10 +23,10 @@
 				<div class='box-body'>
 
 					<select name="searchType">
-						<option value="n"
+						<option value="x"
 							<c:out value="${cri.searchType == null?'selected':''}"/>>
 							---</option>
-						<option value="t"
+						<option value="n"
 							<c:out value="${cri.searchType eq 'n'?'selected':''}"/>>
 							ProdName</option>
 						<option value="c"

@@ -122,12 +122,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		
 	</select>
 	
-	<select id="countPaging" resultType="int">
-		<![CDATA[
-			SELECT count(prodcod)
-			  FROM tbl_product
-			 WHERE prodcod > 0 		
-		]]>
-	</select>
-	
 </mapper>

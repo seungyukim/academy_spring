@@ -29,14 +29,12 @@
 							<label for="exampleInputEmail1">QUANTITY</label> <input type="text"
 								name='quantity' class="form-control" placeholder="Enter Quantity">
 						</div>
-						</div>
 						<!-- 						<div class="form-group">
 							<label for="exampleInputEmail1">Writer</label> <input type="text"
 								name="writer" class="form-control" placeholder="Enter Writer">
 						</div> -->
 					</div>
 					<!-- /.box-body -->
-
 					<div class="box-footer">
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
@@ -52,7 +50,5 @@
 	<!-- /.row -->
 </section>
 <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
 
 <%@include file="../include/footer.jsp"%>
