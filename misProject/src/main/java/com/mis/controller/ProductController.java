@@ -115,10 +115,10 @@ public class ProductController {
 	}
 		
 	@RequestMapping(value = "/modifyPage", method = RequestMethod.GET)
-	public void modifyPageGET(int bno
+	public void modifyPageGET(int prodcod
 			               , @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 	
-		model.addAttribute(service.read(bno));
+		model.addAttribute(service.read(prodcod));
 	}
 		
 	@RequestMapping(value = "/modifyPage", method = RequestMethod.POST)

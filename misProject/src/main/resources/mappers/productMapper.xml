@@ -18,20 +18,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
               ,#{quantity} ) 
 	</insert>
 	
-	<select id="searchlist" resultType="com.mis.domain.ProductVO">
-		<![CDATA[
-			SELECT prodcod
-			      ,prodname
-			      ,price
-			      ,quantity
-			      ,regdate
-			      ,moddate
-			  FROM tbl_product
-			 WHERE prodcod > 0
-			 ORDER BY prodcod DESC, regdate DESC
-		]]>
-	</select>
-	
 	<!-- 제품정보 조회 -->
 	<select id="read" resultType="com.mis.domain.ProductVO">
 		SELECT prodcod
