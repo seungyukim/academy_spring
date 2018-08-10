@@ -47,6 +47,15 @@ public class PageMaker {
 		return uriComponents.toUriString();
 	}
 
+	public int listCount(int page) {
+		
+		int count = 1;
+		
+		count = (page-1) * 10;
+		
+		return count;
+	}
+	
 	public int getTotalCount() {
 		return totalCount;
 	}

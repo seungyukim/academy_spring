@@ -51,29 +51,30 @@
 				<div class="box-body">
 					<table class="table table-bordered">
 						<tr>
-							<th style="width: 10px">PRODCOD</th>
+							<th style="width: 10px">NO</th>
+							<th>NO</th>
+							<th>PRODCOD</th>
 							<th>PRODNAME</th>
 							<th>PRICE</th>
 							<th>QUANTITY</th>
 							<th>REGDATE</th>
-							<th>MODDATE</th>
 <!-- 							<th style="width: 40px">VIEWCNT</th> -->
 						</tr>
 
-						<c:forEach items="${list}" var="productVO">
+						<c:forEach items="${list}" var="productVO" varStatus="status">
 
 							<tr>
+<%-- 							<td>${(pageMaker.totalCount - status.index) - ( (pageMaker.cri.page - 1)  *  pageMaker.cri.perPageNum) } </td> --%>
+								<td>${(pageMaker.totalCount - status.index) - pageMaker.listCount(pageMaker.cri.page) } </td>
+								<td>${ status.count                         + pageMaker.listCount(pageMaker.cri.page) } </td>
 								<td>${productVO.prodcod}</td>
 								<td><a
 									href='/shop/readPage${pageMaker.makeSearch(pageMaker.cri.page) }&prodcod=${productVO.prodcod}'>
 										${productVO.prodname} </a></td>
-								<td>${productVO.price}</td>
+								<td><span class="badge bg-red">${productVO.price}</span></td>
 								<td>${productVO.quantity}</td>
 								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 										value="${productVO.regdate}" /></td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-										value="${productVO.moddate}" /></td>
-<%-- 								<td><span class="badge bg-red">${boardVO.viewcnt }</span></td> --%>
 							</tr>
 
 						</c:forEach>
